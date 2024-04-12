@@ -1,0 +1,45 @@
+html
+    head
+        title User
+        link(rel="stylesheet" type="text/css" href="/styles.css")
+    body
+        include ../views/header
+        h6 User Info:
+        div#left(class = "column left")
+            div.stats
+                h1 Username: 
+                |
+                input#user(type='text', name='user')
+                div.button1
+                    button#delete(type = "button" onclick="user()") Change
+            div.stats
+                h1 Password: 
+                |
+                input#pass(type='text', name='pass')
+                div.button1
+                    button#delete(type = "button" onclick="pass()") Change
+            div.stats
+                h1 Goal: 
+                |
+                input#goal(type='text', name='goal')
+                div.button1
+                    button#delete(type = "button" onclick="goal()") Change
+            div.stats
+                h1 Health Metrics: 
+                |
+                input#health_metrics(type='text', name='health_metrics')
+                div.button1
+                    button#delete(type = "button" onclick="health_metrics()") Change
+        div#middle(class = "column middle")
+            div.stats
+                h3 User name: #{user}
+                h3 Goal: #{goal}
+                h3 Health Metrics: #{health_metrics}
+                h3 Exercise routines: 
+                each item in routine
+                    h3 #{item.class_name}
+           
+            
+        div#right(class = "column right")
+           
+        script(src="/user.js")

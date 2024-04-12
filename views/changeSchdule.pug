@@ -1,0 +1,50 @@
+html
+    head
+        title DashBoard
+        link(rel="stylesheet" type="text/css" href="/styles.css")
+    body
+        include ../views/header
+        
+        div#left(class = "column left")
+        div#middle(class = "column middle")
+            h6 Change Classes:
+            div.cart
+                h1 Class Name: 
+                |
+                input#name(type='text', name='name')
+                h1 Time: 
+                |
+                input#time(type='text', name='time')
+                h1 Date: 
+                |
+                input#date(type='text', name='date')
+                h1 Cost: 
+                |
+                input#fee(type='text', name='fee')
+                h1 Room:
+                select(id = 'room' name = 'room')
+                    each item in room
+                        option(value = `${item.room_id}`) #{item.equipment_name}
+                h1 Class:
+                select(id = 'class' name = 'class')
+                    each item in data
+                        option(value = `${item.class_id}`) #{item.class_name}
+                br
+                br
+                br
+                div.button1
+                    button#add(type = "button" onclick=`update()`) Update Schdule
+            h6 Remove Class
+                h1 Class:
+                select(id = 'class1' name = 'class1')
+                    each item in data
+                        option(value = `${item.class_id}`) #{item.class_name}
+                br
+                br 
+                br
+                div.button1
+                    button#remove(type = "button" onclick=`remove()`) Remove Schdule
+               
+        div#right(class = "column right")
+           
+        script(src="/changeSchdule.js")
