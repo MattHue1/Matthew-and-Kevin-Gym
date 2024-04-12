@@ -28,3 +28,9 @@ server.js: The server that communicate with the client side
 3. Type "node server.js" to start the server
 
 4. Type go to google and enter "localhost:3000"
+
+# Bonus Feature
+This is developed as a web application
+
+# Bonus marks
+There is only 2 person in this group
